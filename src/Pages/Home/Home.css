@@ -1,0 +1,23 @@
+.hospitals{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.hospital{
+    height: 10vh;
+    width: 45%;
+    border: 2px solid red;
+    margin: 10px 20px;
+}
+.title{
+    font-size: 20px;
+    color: blue;
+}
+.address{
+    margin-top: 5px;
+    font-size: 15px;
+    color: green;
+}
