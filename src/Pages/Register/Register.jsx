@@ -3,8 +3,8 @@ import './Register.css'
 
 const Register = () => {
     return (
-        <div className='container'>
-            <div className="wrapper">
+        <div className='RegisterContainer'>
+            <div className="RegisterWrapper">
                 <div className="title">SIGN UP</div>
                 <form className='form'>
                     <input type="text" name="name" placeholder='Name'/>

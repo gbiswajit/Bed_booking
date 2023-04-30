@@ -1,4 +1,4 @@
-.container {
+.RegisterContainer {
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -12,13 +12,14 @@
       center;
 }
 
-.wrapper {
+.RegisterWrapper {
     width: 30%;
     padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    text-align: center;
 }
 
 .title {
@@ -28,7 +29,7 @@
 
 input {
     flex: 1;
-    min-width: 60%;
+    width: 60%;
     margin: 20px 10px 0px 0px;
     padding: 10px;
 }
