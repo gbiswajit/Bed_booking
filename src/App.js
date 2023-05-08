@@ -1,7 +1,9 @@
 import './App.css';
-import Register from './Pages/Register/Register'
-import Login from './Pages/Login/Login'
-import Home from './Pages/Home/Home'
+import Register from './Pages/Register'
+import Login from './Pages/Login'
+import Home from './Pages/Home'
+import Hospitals from './Pages/Hospitals';
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -16,6 +18,7 @@ function App() {
     <Router>
       <Routes>
         <Route exact path='/' element={<Home />} />
+        <Route exact path='/hospitals' element={<Hospitals />} />
         <Route exact path='/login' element={<Login />} />
         <Route exact path='/register' element={<Register />} />
       </Routes>
