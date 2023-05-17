@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 const Container=styled.div`
     height: 100vh;
@@ -57,7 +57,7 @@ const Register = () => {
             <Wrapper>
                 <Title>SIGN UP</Title>
                 <Form>
-                    <Input type="text" name="name" placeholder='Name'/>
+                    <Input type="text" name="name" placeholder='Username'/>
                     <Input type="text" placeholder='Email' name="email"/>
                     <Input type="text" placeholder='PassWord' name="password"/>
                     <Input type="text" placeholder='Confirm Password' name="confirm"/>

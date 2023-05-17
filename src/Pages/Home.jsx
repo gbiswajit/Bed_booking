@@ -3,30 +3,33 @@ import axios from 'axios'
 import Navbar from '../Components/Navbar'
 import SearchIcon from '@mui/icons-material/Search';
 import styled from 'styled-components';
+import services from '../Datas/Services';
+import Footer from '../Components/Footer';
+import { Link } from 'react-router-dom';
 
-const Container=styled.div`
+const Container = styled.div`
 
 `
-const Wrapper= styled.div`
+const Wrapper = styled.div`
     margin-top: 40px;
     display: flex;
 `
-const Tagline=styled.div`
+const Tagline = styled.div`
     margin: 50px 0px;
     align-items: center;
     text-align: center;
 `
-const TagTitle=styled.div`
+const TagTitle = styled.div`
     font-size: 35px;
     color: rgb(222, 172, 111);
 `
-const TagSubTitle=styled.div`
+const TagSubTitle = styled.div`
     font-size: 25px;
     margin-top: 5px;
     color: rgb(214, 184, 148);
     font-style: italic;
 `
-const Filters=styled.div`
+const Filters = styled.div`
     padding: 5px 40px;
     flex: 1;
     text-align: left;
@@ -34,13 +37,31 @@ const Filters=styled.div`
     font-weight: bold;
     border-right: 1px solid black;
 `
-const Filter=styled.div`
+const Filter = styled.div`
     margin-top: 25px;
 `
-const FilterHead=styled.div`
+const FilterHead = styled.div`
 
 `
-const SearchContaier=styled.div`
+const LinkPage = styled(Link)`
+    text-decoration: none;
+    color: black;
+    height: 50vh;
+    box-shadow: 0 4px 8px rgba(0,0,0,.12);
+    border-radius: 24px;
+    width: 25%;
+    background-color: #e1f8dc;
+    border: 1px solid #f0f0f5;
+    margin: 10px 20px;
+    cursor: pointer;
+
+    text-align: center;
+    &:hover{
+        transform: scale(1.1);
+        transition: 0.2s ease-in-out;
+    }
+`
+const SearchContaier = styled.div`
     margin-top: 10px;
     width: 100%;
     height: 40px;
@@ -49,7 +70,7 @@ const SearchContaier=styled.div`
     justify-content: space-between;
     border: 1px solid lightgray;
 `
-const Hospitals=styled.div`
+const Services = styled.div`
     flex: 3;
     width: 100%;
     display: flex;
@@ -57,33 +78,43 @@ const Hospitals=styled.div`
     align-items: center;
     flex-wrap: wrap;
     flex-direction: row;
+    margin-left: 0;
 `
-const Hospital=styled.div`
-    height: 40vh;
-    width: 40%;
-    border: 1px solid black;
+const Service = styled.div`
+    height: 50vh;
+    box-shadow: 0 4px 8px rgba(0,0,0,.12);
+    border-radius: 24px;
+    width: 100%;
+    background-color: #e1f8dc;
+    border: 1px solid #f0f0f5;
     margin: 10px 20px;
     cursor: pointer;
+
+    text-align: center;
     &:hover{
         transform: scale(1.1);
         transition: 0.2s ease-in-out;
     }
 `
-const Title=styled.div`
+const Title = styled.div`
     font-size: 20px;
+    font-family: 'Ubuntu', sans-serif;
     color: rgb(35, 35, 88);
 `
-const Address=styled.div`
-    margin-top: 5px;
+const About = styled.div`
+    margin-top: 8px;
     font-size: 15px;
+    font-family: 'Lora', serif;
     color: rgb(5, 61, 5);
 `
-const HImage=styled.img`
+const HImage = styled.img`
     width: 100%;
     height: 75%;
-    border-bottom: 1px solid black;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    object-fit: cover;
 `
-const Select=styled.select`
+const Select = styled.select`
     margin-top: 10px;
     width: 100%;
     height: 40px;
@@ -93,22 +124,23 @@ const Select=styled.select`
     font-weight: bold;
     color: rgb(142, 139, 139);
 `
-const Options=styled.option`
+const Options = styled.option`
 
 `
-const SearchInput=styled.input`
+const SearchInput = styled.input`
     padding-left: 20px;
     margin: 0px;
     flex: 8;
     border: none;
 `
-const SearchButton=styled.button`
+const SearchButton = styled.button`
     flex: 1;
     border: none;
     background-color: teal;
     color: white;
     cursor: pointer;
 `
+
 
 const Home = () => {
     const [hospitals, setHospital] = useState([]);
@@ -156,18 +188,22 @@ const Home = () => {
                         </Select>
                     </Filter>
                 </Filters>
-                <Hospitals>
-                    {hospitals.map(hospital => {
+                <Services>
+                    {services.map(service => {
                         return (
-                            <Hospital>
-                                <HImage src="https://images.pexels.com/photos/668298/pexels-photo-668298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="error"/>
-                                <Title>{hospital.name}</Title>
-                                <Address>{hospital.address}</Address>
-                            </Hospital>
+                            <LinkPage to={service.link}>
+
+                                <HImage src={service.img} alt="error" />
+                                <Title>{service.name}</Title>
+                                <About>{service.about}</About>
+
+                            </LinkPage>
+
                         )
                     })}
-                </Hospitals>
+                </Services>
             </Wrapper>
+            <Footer />
         </Container>
     )
 }

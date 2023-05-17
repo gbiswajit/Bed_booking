@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 import { Link } from 'react-router-dom';
@@ -10,7 +10,7 @@ const Container = styled.div`
 const Wrapper = styled.div`
     margin-top: 30px;
     height: 30px;
-    width: 95%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
